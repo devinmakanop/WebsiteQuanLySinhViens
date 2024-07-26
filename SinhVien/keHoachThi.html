@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="keHoachThi.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid	">
+        <div class="sidebar d-flex flex-column flex-shrink-0 text-white"
+            style="width: 210px; height: 100vh; padding: 0; margin-left: -12px; position: fixed; background-color: #ad171c;">
+            <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-6">Tài khoản sinh viên</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto list-unstyled">
+                <li class="nav-item">
+                    <a href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" class="nav-link text-white"
+                        aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" />
+                        </svg>
+                        Thông tin cá nhân
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" />
+                        </svg>
+                        Đăng ký học phần
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" />
+                        </svg>
+                        Thời khóa biểu
+                    </a>
+                </li>
+                <li class="" style="margin-left: 28px;">
+                    <button
+                        class="nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+                        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <span style="font-size: 14px;">Theo dõi lịch thi</span>
+                    </button>
+                    <div class="collapse" id="dashboard-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/keHoachThi.html"
+                                    class="nav-link text-white link-dark rounded "><span class="bgr">Kế hoạch
+                                        thi</span></a></li>
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                                    class="nav-link text-white link-dark rounded">Lịch
+                                    thi</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="" style="margin-left: 28px;">
+                    <button
+                        class=" nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+                        data-bs-toggle="collapse" data-bs-target="#kq-collapse" aria-expanded="false">
+                        <span style="font-size: 14px;">Theo dõi kết quả học</span>
+                    </button>
+                    <div class="collapse" id="kq-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/ketQuaHocTap.html"
+                                    class="nav-link text-white link-dark rounded "><span>Kết quả học
+                                        tập</span></a></li>
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                                    class="nav-link text-white link-dark rounded">Kết quả thi</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" />
+                        </svg>
+                        Thông tin in bằng
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="contain">
+            <div class="cont mt-4 pb-3 ps-3">
+                <div class="title bold pt-3">
+                    Tra cứu thông tin kế hoạch thi theo lớp
+                    <hr style="margin-top: 10px; width: 1070px; ">
+                </div>
+                <div class="alert alert-danger w-1000" role="alert">
+                    Chú ý: Yêu cầu sinh viên xuất trình thẻ sinh viên hoặc chứng minh thư nhân dân hoặc hộ chiếu để CBCT
+                    xác
+                    thực khi thi. Nếu sinh viên không có một trong các giấy tờ trên sẽ không được dự thi.
+
+                </div>
+                <div class="input-group mb-3">
+                    <span class="mt-1">Nhập mã lớp độc lập:</span>
+                    <input type="text" class=" form-label ipMaLop ms-2" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                    <button style="height: 30px; font-size: 12px; font-weight: bold;" type="button" id="button-addon2">
+                        Xem kế hoạch thi
+                    </button>
+                </div>
+                <hr style="margin-top: 10px; width: 1070px;">
+                <table class=" table table-bordered w-1000" style="margin-bottom: 70px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Mã lớp độc lập </th>
+                            <th scope="col">Tên học phần </th>
+                            <th scope="col">Ngày thi </th>
+                            <th scope="col">Ca thi </th>
+                            <th scope="col">Lần thi </th>
+                            <th scope="col">Lớp ưu tiên </th>
+                            <th scope="col">Khoa
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="title f-15 mb-3">Danh sách môn học và mã lớp độc lập</div>
+                <hr class="mb-3" style="margin-top: 10px; width: 1070px; margin-left: 0px;">
+
+                <div class="panel-body  mb-5 w-1000">
+                    <table class="table table-bordered table-striped">
+                        <thead style="text-align: center">
+                            <tr class="kTableHeader">
+                                <th style="width: 35px" rowspan="2">
+                                    <div style="font-weight: bold;">
+                                        STT
+                                    </div>
+                                </th>
+                                <th rowspan="2" style="font-weight: bold;">Mã lớp độc lập
+                                </th>
+                                <th rowspan="2" style="font-weight: bold;">Môn học
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    1
+                                </td>
+                                <td>
+                                    <div>
+                                        20211BS6002013
+                                    </div>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211BS6002013"
+                                        title="Kế hoạch thi theo mã lớp độc lậpGiải tích">
+                                        Giải tích
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="td">
+                                    2
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211BS6018005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20211BS6018005">
+                                        20211BS6018005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211BS6018005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpGiao tiếp liên văn hóa">
+                                        Giao tiếp liên văn hóa
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    3
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211BS6019011"
+                                        title="Kế hoạch thi theo mã lớp độc lập20211BS6019011">
+                                        20211BS6019011
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211BS6019011"
+                                        title="Kế hoạch thi theo mã lớp độc lậpNhập môn nghiên cứu khoa học">
+                                        Nhập môn nghiên cứu khoa học
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    4
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211FL6085010"
+                                        title="Kế hoạch thi theo mã lớp độc lập20211FL6085010">
+                                        20211FL6085010
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211FL6085010"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTiếng Anh Công nghệ thông tin cơ bản 1">
+                                        Tiếng Anh Công nghệ thông tin cơ bản 1
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    5
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211IT6011006"
+                                        title="Kế hoạch thi theo mã lớp độc lập20211IT6011006">
+                                        20211IT6011006
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211IT6011006"
+                                        title="Kế hoạch thi theo mã lớp độc lậpNhập môn về kỹ thuật">
+                                        Nhập môn về kỹ thuật
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    6
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211LP6010019"
+                                        title="Kế hoạch thi theo mã lớp độc lập20211LP6010019">
+                                        20211LP6010019
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211LP6010019"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTriết học Mác-Lênin">
+                                        Triết học Mác-Lênin
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    7
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211PE6021019"
+                                        title="Kế hoạch thi theo mã lớp độc lập20211PE6021019">
+                                        20211PE6021019
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20211PE6021019"
+                                        title="Kế hoạch thi theo mã lớp độc lậpBóng rổ 1">
+                                        Bóng rổ 1
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    8
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212BS6001003"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212BS6001003">
+                                        20212BS6001003
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212BS6001003"
+                                        title="Kế hoạch thi theo mã lớp độc lậpĐại số tuyến tính">
+                                        Đại số tuyến tính
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    9
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212BS6027005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212BS6027005">
+                                        20212BS6027005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212BS6027005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpVật lý đại cương">
+                                        Vật lý đại cương
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    10
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212BS6024005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212BS6024005">
+                                        20212BS6024005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212BS6024005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpMỹ thuật đại cương">
+                                        Mỹ thuật đại cương
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    11
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212FL6086010"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212FL6086010">
+                                        20212FL6086010
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212FL6086010"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTiếng Anh công nghệ thông tin cơ bản 2">
+                                        Tiếng Anh công nghệ thông tin cơ bản 2
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    12
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212IT6015005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212IT6015005">
+                                        20212IT6015005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212IT6015005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpKỹ thuật lập trình">
+                                        Kỹ thuật lập trình
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    13
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212IT6016005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212IT6016005">
+                                        20212IT6016005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212IT6016005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpKỹ thuật số">
+                                        Kỹ thuật số
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    14
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212LP6011005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212LP6011005">
+                                        20212LP6011005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212LP6011005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpKinh tế chính trị Mác-Lênin">
+                                        Kinh tế chính trị Mác-Lênin
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    15
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212PE6022005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20212PE6022005">
+                                        20212PE6022005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20212PE6022005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpBóng rổ 2">
+                                        Bóng rổ 2
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    16
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6004018"
+                                        title="Kế hoạch thi theo mã lớp độc lập20213DC6004018">
+                                        20213DC6004018
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6004018"
+                                        title="Kế hoạch thi theo mã lớp độc lậpĐường lối QP&amp;AN của ĐCS Việt Nam">
+                                        Đường lối QP&amp;AN của ĐCS Việt Nam
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    17
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6005018"
+                                        title="Kế hoạch thi theo mã lớp độc lập20213DC6005018">
+                                        20213DC6005018
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6005018"
+                                        title="Kế hoạch thi theo mã lớp độc lậpCông tác quốc phòng và an ninh">
+                                        Công tác quốc phòng và an ninh
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    18
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6006018"
+                                        title="Kế hoạch thi theo mã lớp độc lập20213DC6006018">
+                                        20213DC6006018
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6006018"
+                                        title="Kế hoạch thi theo mã lớp độc lậpQuân sự chung">
+                                        Quân sự chung
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    19
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6007018"
+                                        title="Kế hoạch thi theo mã lớp độc lập20213DC6007018">
+                                        20213DC6007018
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20213DC6007018"
+                                        title="Kế hoạch thi theo mã lớp độc lậpKỹ thuật chiến đấu bộ binh và chiến thuật">
+                                        Kỹ thuật chiến đấu bộ binh và chiến thuật
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    20
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221BS6008014"
+                                        title="Kế hoạch thi theo mã lớp độc lập20221BS6008014">
+                                        20221BS6008014
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221BS6008014"
+                                        title="Kế hoạch thi theo mã lớp độc lậpXác suất thống kê">
+                                        Xác suất thống kê
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    21
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6067001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20221IT6067001">
+                                        20221IT6067001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6067001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpKiến trúc máy tính và hệ điều hành">
+                                        Kiến trúc máy tính và hệ điều hành
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    22
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6035005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20221IT6035005">
+                                        20221IT6035005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6035005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpToán rời rạc">
+                                        Toán rời rạc
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    23
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221FL6087029"
+                                        title="Kế hoạch thi theo mã lớp độc lập20221FL6087029">
+                                        20221FL6087029
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221FL6087029"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTiếng Anh Công nghệ thông tin cơ bản 3">
+                                        Tiếng Anh Công nghệ thông tin cơ bản 3
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    24
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221LP6012016"
+                                        title="Kế hoạch thi theo mã lớp độc lập20221LP6012016">
+                                        20221LP6012016
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221LP6012016"
+                                        title="Kế hoạch thi theo mã lớp độc lậpChủ nghĩa xã hội khoa học">
+                                        Chủ nghĩa xã hội khoa học
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    25
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6126004"
+                                        title="Kế hoạch thi theo mã lớp độc lập20221IT6126004">
+                                        20221IT6126004
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6126004"
+                                        title="Kế hoạch thi theo mã lớp độc lậpHệ thống cơ sở dữ liệu">
+                                        Hệ thống cơ sở dữ liệu
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    26
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6120006"
+                                        title="Kế hoạch thi theo mã lớp độc lập20221IT6120006">
+                                        20221IT6120006
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20221IT6120006"
+                                        title="Kế hoạch thi theo mã lớp độc lậpLập trình hướng đối tượng">
+                                        Lập trình hướng đối tượng
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    27
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6001011"
+                                        title="Kế hoạch thi theo mã lớp độc lập20222IT6001011">
+                                        20222IT6001011
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6001011"
+                                        title="Kế hoạch thi theo mã lớp độc lậpAn toàn và bảo mật thông tin">
+                                        An toàn và bảo mật thông tin
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    28
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6002013"
+                                        title="Kế hoạch thi theo mã lớp độc lập20222IT6002013">
+                                        20222IT6002013
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6002013"
+                                        title="Kế hoạch thi theo mã lớp độc lậpCấu trúc dữ liệu và giải thuật">
+                                        Cấu trúc dữ liệu và giải thuật
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    29
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222LP6013032"
+                                        title="Kế hoạch thi theo mã lớp độc lập20222LP6013032">
+                                        20222LP6013032
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222LP6013032"
+                                        title="Kế hoạch thi theo mã lớp độc lậpLịch sử Đảng Cộng sản Việt Nam">
+                                        Lịch sử Đảng Cộng sản Việt Nam
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    30
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6083001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20222IT6083001">
+                                        20222IT6083001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6083001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpMạng máy tính ">
+                                        Mạng máy tính
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    31
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6082012"
+                                        title="Kế hoạch thi theo mã lớp độc lập20222IT6082012">
+                                        20222IT6082012
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6082012"
+                                        title="Kế hoạch thi theo mã lớp độc lậpNhập môn công nghệ phần mềm ">
+                                        Nhập môn công nghệ phần mềm
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    32
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6066005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20222IT6066005">
+                                        20222IT6066005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20222IT6066005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpPhân tích thiết kế phần mềm">
+                                        Phân tích thiết kế phần mềm
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    33
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224LP6003001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20224LP6003001">
+                                        20224LP6003001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224LP6003001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpPháp luật đại cương">
+                                        Pháp luật đại cương
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    34
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224FL6088001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20224FL6088001">
+                                        20224FL6088001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224FL6088001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTiếng Anh Công nghệ thông tin cơ bản 4">
+                                        Tiếng Anh Công nghệ thông tin cơ bản 4
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    35
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224PE6017005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20224PE6017005">
+                                        20224PE6017005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224PE6017005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpBóng bàn 1">
+                                        Bóng bàn 1
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    36
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224PE6029002"
+                                        title="Kế hoạch thi theo mã lớp độc lập20224PE6029002">
+                                        20224PE6029002
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20224PE6029002"
+                                        title="Kế hoạch thi theo mã lớp độc lậpĐá cầu 1">
+                                        Đá cầu 1
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    37
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6071005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20231IT6071005">
+                                        20231IT6071005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6071005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpPhát triển dự án công nghệ thông tin">
+                                        Phát triển dự án công nghệ thông tin
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    38
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6100006"
+                                        title="Kế hoạch thi theo mã lớp độc lập20231IT6100006">
+                                        20231IT6100006
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6100006"
+                                        title="Kế hoạch thi theo mã lớp độc lậpThiết kế đồ hoạ 2D">
+                                        Thiết kế đồ hoạ 2D
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    39
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6039009"
+                                        title="Kế hoạch thi theo mã lớp độc lập20231IT6039009">
+                                        20231IT6039009
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6039009"
+                                        title="Kế hoạch thi theo mã lớp độc lậpThiết kế Web">
+                                        Thiết kế Web
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    40
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6121005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20231IT6121005">
+                                        20231IT6121005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6121005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpThực tập cơ sở ngành">
+                                        Thực tập cơ sở ngành
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    41
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231FL6343007"
+                                        title="Kế hoạch thi theo mã lớp độc lập20231FL6343007">
+                                        20231FL6343007
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231FL6343007"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTiếng Anh Công nghệ thông tin 1">
+                                        Tiếng Anh Công nghệ thông tin 1
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    42
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6043005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20231IT6043005">
+                                        20231IT6043005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231IT6043005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTrí tuệ nhân tạo">
+                                        Trí tuệ nhân tạo
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    43
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231LP6004013"
+                                        title="Kế hoạch thi theo mã lớp độc lập20231LP6004013">
+                                        20231LP6004013
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20231LP6004013"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTư tưởng Hồ Chí Minh">
+                                        Tư tưởng Hồ Chí Minh
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    44
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20233IT6017002"
+                                        title="Kế hoạch thi theo mã lớp độc lập20233IT6017002">
+                                        20233IT6017002
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20233IT6017002"
+                                        title="Kế hoạch thi theo mã lớp độc lậpLập trình .NET">
+                                        Lập trình .NET
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    45
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20233IT6044001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20233IT6044001">
+                                        20233IT6044001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20233IT6044001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpỨng dụng thuật toán">
+                                        Ứng dụng thuật toán
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    46
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6056006"
+                                        title="Kế hoạch thi theo mã lớp độc lập20232IT6056006">
+                                        20232IT6056006
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6056006"
+                                        title="Kế hoạch thi theo mã lớp độc lậpQuản trị mạng trên hệ điều hành Windows">
+                                        Quản trị mạng trên hệ điều hành Windows
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    47
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6125001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20232IT6125001">
+                                        20232IT6125001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6125001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpThiết kế web nâng cao">
+                                        Thiết kế web nâng cao
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    48
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232FL6344004"
+                                        title="Kế hoạch thi theo mã lớp độc lập20232FL6344004">
+                                        20232FL6344004
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232FL6344004"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTiếng Anh Công nghệ thông tin 2">
+                                        Tiếng Anh Công nghệ thông tin 2
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    49
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6123005"
+                                        title="Kế hoạch thi theo mã lớp độc lập20232IT6123005">
+                                        20232IT6123005
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6123005"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTương tác người máy">
+                                        Tương tác người máy
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class="  ">
+                                <td class="td">
+                                    50
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6034001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20232IT6034001">
+                                        20232IT6034001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6034001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpTích hợp hệ thống phần mềm">
+                                        Tích hợp hệ thống phần mềm
+                                        </a>
+                                </td>
+                            </tr>
+
+                            <tr class=" ">
+                                <td class="td">
+                                    51
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6004001"
+                                        title="Kế hoạch thi theo mã lớp độc lập20232IT6004001">
+                                        20232IT6004001
+                                        </a>
+                                </td>
+                                <td>
+                                    <div href="/student/schedulefees/examplant?code=20232IT6004001"
+                                        title="Kế hoạch thi theo mã lớp độc lậpCông nghệ đa phương tiện">
+                                        Công nghệ đa phương tiện
+                                        </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Đoạn mã JavaScript/jQuery -->
+    <script>
+        $(document).ready(function () {
+            $('#button-addon2').click(function () {
+                var maLop = $('.ipMaLop').val().trim(); // Lấy giá trị nhập vào và loại bỏ khoảng trắng đầu cuối
+
+                if (maLop !== '') {
+                    // Lọc các hàng của bảng dựa trên mã lớp
+                    $('tbody tr').each(function () {
+                        var tdMaLop = $(this).find('td:nth-child(2)').text().trim(); // Lấy mã lớp từ cột thứ hai của hàng
+
+                        if (tdMaLop === maLop) {
+                            $(this).show(); // Hiển thị hàng nếu mã lớp trùng khớp
+                        } else {
+                            $(this).hide(); // Ẩn hàng nếu mã lớp không trùng khớp
+                        }
+                    });
+                } else {
+                    alert('Vui lòng nhập mã lớp độc lập để lọc kế hoạch thi.');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

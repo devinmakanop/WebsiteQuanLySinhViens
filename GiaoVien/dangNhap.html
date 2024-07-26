@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link your external CSS file here -->
+</head>
+
+<style>
+  /* Reset CSS */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .btn-primary:focus {
+    outline: none;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 400px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="tabcontent">
+      <form id="loginFormNick2" onsubmit="return login('nick2')">
+        <div class="form-group">
+          <label for="username2">Tên đăng nhập</label>
+          <input type="text" id="username2" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password2">Mật khẩu</label>
+          <input type="password" id="password2" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function login(nickname) {
+      var usernameField = document.getElementById('username2');
+      var passwordField = document.getElementById('password2');
+      var username = usernameField.value.trim();
+      var password = passwordField.value.trim();
+
+      // Example validation (you should implement your own validation logic)
+      if (username === 'giaovien1' && password === '123') {
+        // Redirect to home page for nick 2
+        window.location.href = 'http://127.0.0.1:5500/GiaoVien/trangChu.html';
+        return false; // Prevent form submission
+      }
+      else if (username === 'sinhvien1' && password === '123') {
+        // Redirect to home page for nick 2
+        window.location.href = 'http://127.0.0.1:5500/trangChu.html';
+        return false; // Prevent form submission
+      } else {
+        alert('Tên đăng nhập hoặc mật khẩu không đúng.');
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+</body>
+
+</html>

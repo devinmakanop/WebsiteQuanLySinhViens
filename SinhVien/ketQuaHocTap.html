@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="ketQuaHocTap.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Document</title>
+</head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #b22222;
+        color: white;
+    }
+
+    .x-mark {
+        text-align: center;
+    }
+
+    .summary {
+        border: 1px solid black;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #f8d7da;
+    }
+
+    .summary p {
+        margin: 0;
+        padding: 5px 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="sidebar d-flex flex-column flex-shrink-0 text-white "
+            style="width: 210px; height: 100vh; padding: 0; background-color: #ad171c; margin-left: -12px; position: fixed;">
+            <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-6">Tài khoản sinh viên</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto list-unstyled">
+                <li class="nav-item">
+                    <a href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" class="nav-link text-white"
+                        aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" />
+                        </svg>
+                        Thông tin cá nhân
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" />
+                        </svg>
+                        Đăng ký học phần
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" />
+                        </svg>
+                        Thời khóa biểu
+                    </a>
+                </li>
+                <li class="" style="margin-left: 28px;">
+                    <button
+                        class="nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+                        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <span style="font-size: 14px;">Theo dõi lịch thi</span>
+                    </button>
+                    <div class="collapse" id="dashboard-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/keHoachThi.html"
+                                    class="nav-link text-white link-dark rounded "><span>Kế hoạch
+                                        thi</span></a></li>
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                                    class="nav-link text-white link-dark rounded"><span class="bgr">Lịch
+                                        thi</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="" style="margin-left: 28px;">
+                    <button
+                        class=" nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+                        data-bs-toggle="collapse" data-bs-target="#kq-collapse" aria-expanded="false">
+                        <span style="font-size: 14px;">Theo dõi kết quả học</span>
+                    </button>
+                    <div class="collapse" id="kq-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/ketQuaHocTap.html"
+                                    class="nav-link text-white link-dark rounded "><span>Kết quả học
+                                        tập</span></a></li>
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                                    class="nav-link text-white link-dark rounded">Kết quả thi</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" />
+                        </svg>
+                        Thông tin in bằng
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 contain">
+            <div class="cont mt-4 pb-3 ps-3">
+                <div class="title f-15 pt-3">Kết quả học tập các học phần</div>
+                <hr class="mb-3" style="margin-top: 10px; width: 1070px;">
+                <div class="box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stt</th>
+                                <th>Mã MH</th>
+                                <th>Nhóm/tổ môn học</th>
+                                <th>Tên môn học</th>
+                                <th>Số tín chỉ</th>
+                                <th>Điểm thi</th>
+                                <th>Điểm TK (10)</th>
+                                <th>Điểm TK (4)</th>
+                                <th>Điểm TK (C)</th>
+                                <th>Kết quả</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="11"
+                                    style="text-align: center; background-color: #f8d7da; font-weight: 600; font-size: 20px;">
+                                    Học kỳ 1 - Năm học
+                                    2024-2025</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>SKD1108</td>
+                                <td>12</td>
+                                <td>Phương pháp luận nghiên cứu khoa học</td>
+                                <td>2</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="x-mark">✗</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>INT14149</td>
+                                <td>12</td>
+                                <td>IoT và ứng dụng</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="x-mark">✗</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>INT1433</td>
+                                <td>06</td>
+                                <td>Lập trình mạng</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="x-mark">✗</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>INT1450</td>
+                                <td>05</td>
+                                <td>Quản lý dự án phần mềm</td>
+                                <td>2</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="x-mark">✗</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>INT1342M</td>
+                                <td>05</td>
+                                <td>Phân tích và thiết kế hệ thống thông tin</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="x-mark">✗</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>INT13146</td>
+                                <td>03</td>
+                                <td>Xử lý ảnh</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="x-mark">✗</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>INT14150</td>
+                                <td>03</td>
+                                <td>Nhập môn khoa học dữ liệu</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="x-mark">✗</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="summary">
+                        <div class="row">
+                            <div class="col-6">
+                                <p>- Điểm trung bình học kỳ hệ 4:</p>
+                                <p>- Điểm trung bình học kỳ hệ 10:</p>
+                                <p>- Số tín chỉ đạt học kỳ:</p>
+                            </div>
+                            <div class="col-6">
+                                <p>- Điểm trung bình tích lũy hệ 4:</p>
+                                <p>- Điểm trung bình tích lũy hệ 10:</p>
+                                <p>- Số tín chỉ tích lũy:</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-1">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Stt</th>
+                                    <th>Mã MH</th>
+                                    <th>Nhóm/tổ môn học</th>
+                                    <th>Tên môn học</th>
+                                    <th>Số tín chỉ</th>
+                                    <th>Điểm thi</th>
+                                    <th>Điểm TK (10)</th>
+                                    <th>Điểm TK (4)</th>
+                                    <th>Điểm TK (C)</th>
+                                    <th>Kết quả</th>
+                                    <th>Chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="11"
+                                        style="text-align: center; background-color: #f8d7da; font-weight: 600; font-size: 20px;">
+                                        Học kỳ 2 - Năm học 2023-2024</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>INT1303</td>
+                                    <td>04</td>
+                                    <td>An toàn và bảo mật hệ thống thông tin</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="x-mark">✗</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>INT13147</td>
+                                    <td>37</td>
+                                    <td>Thực tập cơ sở</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="x-mark">✗</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>INT1340</td>
+                                    <td>09</td>
+                                    <td>Nhập môn công nghệ phần mềm</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="x-mark">✗</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>INT1341</td>
+                                    <td>09</td>
+                                    <td>Nhập môn trí tuệ nhân tạo</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="x-mark">✗</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>INT14148</td>
+                                    <td>10</td>
+                                    <td>Cơ sở dữ liệu phân tán</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="x-mark">✗</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>INT1434</td>
+                                    <td>02</td>
+                                    <td>Lập trình Web</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="x-mark">✗</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>SKD1101</td>
+                                    <td>31</td>
+                                    <td>Kỹ năng thuyết trình</td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="x-mark">✗</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="summary">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>- Điểm trung bình học kỳ hệ 4:</p>
+                                    <p>- Điểm trung bình học kỳ hệ 10:</p>
+                                    <p>- Số tín chỉ đạt học kỳ:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>- Điểm trung bình tích lũy hệ 4: <span class="highlight">2.07</span></p>
+                                    <p>- Điểm trung bình tích lũy hệ 10: <span class="highlight">5.99</span></p>
+                                    <p>- Số tín chỉ tích lũy: <span class="highlight">85</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stt</th>
+                                <th>Mã MH</th>
+                                <th>Nhóm/tổ môn học</th>
+                                <th>Tên môn học</th>
+                                <th>Số tín chỉ</th>
+                                <th>Điểm thi</th>
+                                <th>Điểm TK (10)</th>
+                                <th>Điểm TK (4)</th>
+                                <th>Điểm TK (C)</th>
+                                <th>Kết quả</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="11"
+                                    style="text-align: center; background-color: #f8d7da; font-weight: 600; font-size: 20px;">
+                                    Học kỳ 1 - Năm học 2023-2024</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>BAS1153</td>
+                                <td>14</td>
+                                <td>Lịch sử Đảng cộng sản Việt Nam</td>
+                                <td>2</td>
+                                <td>5.2</td>
+                                <td>6.2</td>
+                                <td>2.0</td>
+                                <td>C</td>
+                                <td class="check-mark">✓</td>
+                                <td>📋</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>BAS1160</td>
+                                <td>35</td>
+                                <td>Tiếng Anh (Course 3 Plus)</td>
+                                <td>2</td>
+                                <td>4.3</td>
+                                <td>5.9</td>
+                                <td>2.0</td>
+                                <td>C</td>
+                                <td class="check-mark">✓</td>
+                                <td>📋</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>INT1313</td>
+                                <td>02</td>
+                                <td>Cơ sở dữ liệu</td>
+                                <td>3</td>
+                                <td>7.1</td>
+                                <td>7.0</td>
+                                <td>3.0</td>
+                                <td>B</td>
+                                <td class="check-mark">✓</td>
+                                <td>📋</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>INT13162</td>
+                                <td>09</td>
+                                <td>Lập trình với Python</td>
+                                <td>3</td>
+                                <td>7.5</td>
+                                <td>7.7</td>
+                                <td>3.0</td>
+                                <td>B</td>
+                                <td class="check-mark">✓</td>
+                                <td>📋</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>INT1319</td>
+                                <td>10</td>
+                                <td>Hệ điều hành</td>
+                                <td>3</td>
+                                <td>4.0</td>
+                                <td>5.3</td>
+                                <td>1.5</td>
+                                <td>D+</td>
+                                <td class="check-mark">✓</td>
+                                <td>📋</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>INT1332</td>
+                                <td>04</td>
+                                <td>Lập trình hướng đối tượng</td>
+                                <td>3</td>
+                                <td>4.0</td>
+                                <td>5.3</td>
+                                <td>1.5</td>
+                                <td>D+</td>
+                                <td class="check-mark">✓</td>
+                                <td>📋</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>INT1336</td>
+                                <td>04</td>
+                                <td>Mạng máy tính</td>
+                                <td>3</td>
+                                <td>7.5</td>
+                                <td>7.2</td>
+                                <td>3.0</td>
+                                <td>B</td>
+                                <td class="check-mark">✓</td>
+                                <td>📋</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="summary">
+                        <div class="row">
+                            <div class="col-6">
+                                <p>- Điểm trung bình học kỳ hệ 4: <span class="highlight">2.32</span></p>
+                                <p>- Điểm trung bình học kỳ hệ 10: <span class="highlight">6.41</span></p>
+                                <p>- Số tín chỉ đạt học kỳ: <span class="highlight">19</span></p>
+                            </div>
+                            <div class="col-6">
+                                <p>- Điểm trung bình tích lũy hệ 4: <span class="highlight">2.07</span></p>
+                                <p>- Điểm trung bình tích lũy hệ 10: <span class="highlight">5.99</span></p>
+                                <p>- Số tín chỉ tích lũy: <span class="highlight">85</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

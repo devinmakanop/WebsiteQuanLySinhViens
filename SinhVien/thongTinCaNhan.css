@@ -1,0 +1,378 @@
+* {
+  overflow-x: hidden;
+}
+
+
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+::placeholder {
+  white-space: pre-line;
+  /* Cho phép xuống dòng */
+}
+
+.click {
+  border-bottom: 1px #b22222 solid;
+}
+
+.f-0 {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.f-1 {
+  color: #404040;
+  font-size: 12px;
+  font-family: " Roboto", Arial, sans-serif;
+}
+
+.f-2 {
+  color: #404040;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+a {
+  font-size: 14px;
+}
+
+.bgr {
+  color: #b22222;
+}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 1250px;
+}
+
+.contain {
+  position: absolute;
+  left: 210px;
+  background-color: #e8bebf;
+  width: 1144px;
+}
+
+.sider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+
+}
+
+.sidebar {}
+
+.sider .inner-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sider .inner-menu ul li a {
+  color: #fff;
+  display: block;
+  padding: 6px 10px;
+  border-bottom: 1px solid #515151;
+}
+
+.inner-main {
+  position: relative;
+  margin-top: 10px;
+  left: 20px;
+  width: 1095px;
+  background-color: #fff;
+}
+
+.inner-main .information-main {
+  background-color: #fff;
+  width: 1095px;
+}
+
+.inner-main .information-main .above {
+  display: flex;
+}
+
+.txt1 {
+  text-size-adjust: 50px;
+}
+
+.inner-main .information-main .above div {
+  margin-top: 40px;
+  color: #fff;
+  align-items: center;
+}
+
+.inner-main .information-main .above img {
+  border-radius: 5dvi;
+  padding: 10px;
+
+}
+
+/* css chuyển tab */
+.tab {
+  color: #b22222;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: white;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* css chuyển tap */
+/* css khối thông tin sinh viên */
+.inner-main .information-main .under ul li span {
+  color: alice#b22222;
+}
+
+.information-related {
+  overflow-y: hidden;
+  height: 40px;
+  background-color: #fff;
+}
+
+.information-related ul {
+  margin-left: 0px;
+  display: flex;
+  width: 1000px;
+  list-style: none;
+}
+
+.information-related ul li {
+  font-size: 13px;
+  padding-top: 12px !important;
+  padding-bottom: 20px !important;
+}
+
+.information-related ul li span:hover {
+  color: #b22222;
+}
+
+
+.tab {
+  color: #404040;
+  margin-right: 50px;
+}
+
+.above div span {
+  font-size: 25px;
+}
+
+.information {
+  width: 1095px;
+}
+
+.information table tr td {
+  /* width: 300px; */
+  height: 12px;
+  border-bottom: 0.5px solid gray;
+}
+
+.information table tr {
+  color: #b22222;
+  align-items: center;
+  padding: 5px;
+}
+
+#tab1 table tr button {
+  margin-left: 100px;
+  border-radius: 10px;
+  background-color: wheat;
+}
+
+.information table tr button:hover {
+  color: #b22222;
+  font-weight: 700;
+}
+
+
+/* css thông tin gia đình */
+.ip1 {
+  width: 900px;
+}
+
+#tab2 table tr td button {
+  border-radius: 10px;
+  color: #b22222;
+  background-color: wheat;
+  margin: 10px;
+}
+
+.txt2 {
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 30px;
+}
+
+/* kết thúc css thông tin gia đình */
+
+/* kết thúc css khối thông tin sinh viên */
+#tab3 table tr td button {
+  border-radius: 10px;
+  color: #b22222;
+  background-color: wheat;
+}
+
+input {
+  margin-left: 30px;
+}
+
+.checkbox {
+  margin-left: 85px;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.title {
+  display: flex;
+  margin-left: 110px;
+}
+
+.left-10 {
+  margin-left: 20px;
+}
+
+.left-80 {
+  margin-left: 80px;
+}
+
+.left-70 {
+  margin-left: 90px;
+}
+
+.left-71 {
+  margin-left: 94px;
+}
+
+.left-73 {
+  margin-left: 104px;
+
+}
+
+.left-72 {
+  margin-left: 101px;
+
+}
+
+.left-49 {
+  margin-left: 62px;
+}
+
+.left-15 {
+  margin-left: 25px;
+}
+
+.left-65 {
+  margin-left: 85px;
+}
+
+.left-50 {
+  margin-left: 65px;
+}
+
+.left-30 {
+  margin-left: 30px;
+}
+
+.title-2 {
+  margin-left: 30px;
+  display: flex;
+}
+
+.title-3 {
+  display: flex;
+  margin-left: 30px;
+}
+
+.all {
+  margin-left: 15px;
+  display: flex;
+}
+
+.tab2 .ip2 .input {
+  margin-left: 32px;
+}
+
+.textarea {
+  margin-left: 30px;
+  width: 400px;
+}
+
+
+.left-125 {
+  margin-left: 138px;
+}
+
+.left-100 {
+  margin-left: 124px;
+}
+
+.center {
+  position: absolute;
+  left: 48%;
+}
+
+.tab3 {
+  position: relative;
+  left: 180px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+
+
+.btnSua {
+  width: 100px;
+  height: 40px;
+}
+
+.btnCapNhat {
+  width: 100px;
+  height: 40px;
+}
+
+.anhChanDung {
+  height: 140px;
+  width: 120px;
+  object-fit: cover;
+}
+
+.allButton {
+  margin-left: 350px;
+}
+
+
+.under ul {
+  display: flex;
+}
+
+
+a {
+  font-size: 14px;
+}
+
+/* css khối thông tin liên hệ */

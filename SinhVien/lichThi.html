@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="lichThi.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar d-flex flex-column flex-shrink-0 text-white"
+            style="width: 210px; height: 100vh; padding: 0; margin-left: -12px; position: fixed;background-color: #ad171c;">
+            <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-6">Tài khoản sinh viên</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto list-unstyled">
+                <li class="nav-item">
+                    <a href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" class="nav-link text-white"
+                        aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" />
+                        </svg>
+                        Thông tin cá nhân
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" />
+                        </svg>
+                        Đăng ký học phần
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" />
+                        </svg>
+                        Thời khóa biểu
+                    </a>
+                </li>
+                <li class="" style="margin-left: 28px;">
+                    <button
+                        class="nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+                        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <span style="font-size: 14px;">Theo dõi lịch thi</span>
+                    </button>
+                    <div class="collapse" id="dashboard-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/keHoachThi.html"
+                                    class="nav-link text-white link-dark rounded "><span>Kế hoạch
+                                        thi</span></a></li>
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                                    class="nav-link text-white link-dark rounded"><span class="bgr">Lịch
+                                        thi</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="" style="margin-left: 28px;">
+                    <button
+                        class=" nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+                        data-bs-toggle="collapse" data-bs-target="#kq-collapse" aria-expanded="false">
+                        <span style="font-size: 14px;">Theo dõi kết quả học</span>
+                    </button>
+                    <div class="collapse" id="kq-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/ketQuaHocTap.html"
+                                    class="nav-link text-white link-dark rounded "><span>Kết quả học
+                                        tập</span></a></li>
+                            <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                                    class="nav-link text-white link-dark rounded">Kết quả thi</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" />
+                        </svg>
+                        Thông tin in bằng
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 contain">
+            <div class="cont mt-4 pb-3 ps-3">
+
+                <div class="title f-15 pt-3">Lịch thi & Tiền VP phẩm phục vụ thi</div>
+                <hr class="mb-4" style="margin-top: 10px; width: 1070px;">
+                <table class="table table-bordered table-striped w-1070">
+                    <tbody>
+                        <tr>
+                            <td scope="row">Họ và tên sinh viên: </th>
+                            <th>Cao Đức Mạnh
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Mã sinh viên: </td>
+                            <th>2021604861
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Lớp: </td>
+                            <th>2021DHCNTT05
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-light w-1070" role="alert">
+                    Chú ý!
+                    - Trong trường hợp trùng lịch thi (ngày thi, ca thi) thì sinh viên lên tầng 9 nhà A10 - Phòng tổ
+                    chức
+                    thi để
+                    đăng ký đổi lịch thi khi đã có SBD cụ thể.
+                    - Yêu cầu sinh viên có mặt tại phòng thi trước 15 phút để Cán bộ coi thi sắp xếp vị trí thi tại
+                    phòng
+                    thi.
+                    - Yêu cầu sinh viên xuất trình thẻ sinh viên hoặc chứng minh thư nhân dân hoặc hộ chiếu để CBCT xác
+                    thực
+                    khi
+                    thi. Nếu sinh viên không có một trong các giấy tờ trên sẽ không được dự thi.
+                    - Để đảm bảo yêu cầu phòng chống dịch bệnh COVID-19, từ ngày 27/5/2021 Trường ĐH Công Nghiệp Hà Nội
+                    tổ
+                    chức
+                    thi kết thúc học phần theo phương thức trực tuyến. Sinh viên xem lịch thi theo phương thức trực
+                    tuyến
+                    tại
+                    mục "Thi online" . Khi nào có thể tổ chức thi theo phương thức trực tiếp nhà trường sẽ báo trước cho
+                    sv
+                    ít
+                    nhất 5 ngày trước ngày thi".
+                </div>
+                <table class="table table-bordered table-striped w-1070">
+                    <thead>
+                        <tr class="kTableHeader">
+                            <th>
+                                <div style="cursor: pointer;">
+                                    STT
+                                </div>
+                                </td>
+                            <th>Môn thi
+                                </td>
+                            <th>Ngày thi
+                            </th>
+                            <th>Ca thi
+                                </td>
+                            <th>SBD
+                                </td>
+                            <th>Lần thi
+                                </td>
+                            <th>Vị trí thi
+                                </td>
+                            <th>Phòng thi
+                                </td>
+                            <th>Tòa nhà
+                                </td>
+                            <th>Cơ sở
+                                </td>
+                            <th>Tiền VP PVT
+                                </td>
+                            <th>Tham gia thi
+                                </td>
+                            <th>Tình trạng
+                                </td>
+                            <th>
+                                <input onclick="ChooseAll(this.form);" type="checkbox" name="kChooseAll"
+                                    title="Chọn toàn bộ">
+                                </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="kTableRow">
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Tiếng Anh Công nghệ thông tin cơ bản 1
+                            </td>
+                            <td>
+                                13/12/2021
+                            </td>
+                            <td>
+                                17h30
+                            </td>
+                            <td>
+                                761590
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online - 602 - A10
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Nhập môn về kỹ thuật
+                            </td>
+                            <td>
+                                11/01/2022
+                            </td>
+                            <td>
+                                13h15
+                            </td>
+                            <td>
+                                860258
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online - 808
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                Giải tích
+                            </td>
+                            <td>
+                                14/01/2022
+                            </td>
+                            <td>
+                                13h15
+                            </td>
+                            <td>
+                                874972
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online - 808
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                Giao tiếp liên văn hóa
+                            </td>
+                            <td>
+                                17/01/2022
+                            </td>
+                            <td>
+                                7h45
+                            </td>
+                            <td>
+                                893198
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online - 207
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                Nhập môn nghiên cứu khoa học
+                            </td>
+                            <td>
+                                19/01/2022
+                            </td>
+                            <td>
+                                10h00
+                            </td>
+                            <td>
+                                903716
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online - 307
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                Triết học Mác-Lênin
+                            </td>
+                            <td>
+                                21/01/2022
+                            </td>
+                            <td>
+                                13h15
+                            </td>
+                            <td>
+                                915328
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online - 303
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                Online
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                7
+                            </td>
+                            <td>
+                                Tiếng Anh công nghệ thông tin cơ bản 2
+                            </td>
+                            <td>
+                                17/04/2022
+                            </td>
+                            <td>
+                                8h00
+                            </td>
+                            <td>
+                                981191
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                D1
+                            </td>
+                            <td>
+                                403
+                            </td>
+                            <td>
+                                C1
+                            </td>
+                            <td>
+                                Cơ sở 3 - Khu C
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                Đường lối QP&amp;AN của ĐCS Việt Nam
+                            </td>
+                            <td>
+                                05/05/2022
+                            </td>
+                            <td>
+                                13h30
+                            </td>
+                            <td>
+                                993217
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A9
+                            </td>
+                            <td>
+                                HT-B3-C19
+                            </td>
+                            <td>
+                                Nhà C19
+                            </td>
+                            <td>
+                                3.Cơ sở 3
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Red;">
+                                    Không tham gia thi</span>
+                            </td>
+                            <td>
+
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                9
+                            </td>
+                            <td>
+                                Quân sự chung
+                            </td>
+                            <td>
+                                11/05/2022
+                            </td>
+                            <td>
+                                13h30
+                            </td>
+                            <td>
+                                999301
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                H3
+                            </td>
+                            <td>
+                                TT15
+                            </td>
+                            <td>
+                                Nha C20
+                            </td>
+                            <td>
+                                3.Cơ sở 3
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                Kỹ thuật chiến đấu bộ binh và chiến thuật
+                            </td>
+                            <td>
+                                14/05/2022
+                            </td>
+                            <td>
+                                13h30
+                            </td>
+                            <td>
+                                7139
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                H3
+                            </td>
+                            <td>
+                                TT13
+                            </td>
+                            <td>
+                                Nha C20
+                            </td>
+                            <td>
+                                3.Cơ sở 3
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                11
+                            </td>
+                            <td>
+                                Công tác quốc phòng và an ninh
+                            </td>
+                            <td>
+                                21/05/2022
+                            </td>
+                            <td>
+                                7h30
+                            </td>
+                            <td>
+                                19185
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                E11
+                            </td>
+                            <td>
+                                HT-B2-C19
+                            </td>
+                            <td>
+                                Nhà C19
+                            </td>
+                            <td>
+                                3.Cơ sở 3
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                12
+                            </td>
+                            <td>
+                                Kỹ thuật lập trình
+                            </td>
+                            <td>
+                                10/06/2022
+                            </td>
+                            <td>
+                                8h50
+                            </td>
+                            <td>
+                                50076
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                309
+                            </td>
+                            <td>
+                                C8
+                            </td>
+                            <td>
+                                Cơ sở 3 - Khu C
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                13
+                            </td>
+                            <td>
+                                Đại số tuyến tính
+                            </td>
+                            <td>
+                                20/06/2022
+                            </td>
+                            <td>
+                                15h00
+                            </td>
+                            <td>
+                                74860
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                G2
+                            </td>
+                            <td>
+                                302
+                            </td>
+                            <td>
+                                C1
+                            </td>
+                            <td>
+                                Cơ sở 3 - Khu C
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                14
+                            </td>
+                            <td>
+                                Mỹ thuật đại cương
+                            </td>
+                            <td>
+                                23/06/2022
+                            </td>
+                            <td>
+                                10h00
+                            </td>
+                            <td>
+                                95930
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                B2
+                            </td>
+                            <td>
+                                403
+                            </td>
+                            <td>
+                                C1
+                            </td>
+                            <td>
+                                Cơ sở 3 - Khu C
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                15
+                            </td>
+                            <td>
+                                Kinh tế chính trị Mác-Lênin
+                            </td>
+                            <td>
+                                25/06/2022
+                            </td>
+                            <td>
+                                10h00
+                            </td>
+                            <td>
+                                108576
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                F7
+                            </td>
+                            <td>
+                                401
+                            </td>
+                            <td>
+                                C1
+                            </td>
+                            <td>
+                                Cơ sở 3 - Khu C
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                16
+                            </td>
+                            <td>
+                                Kỹ thuật số
+                            </td>
+                            <td>
+                                27/06/2022
+                            </td>
+                            <td>
+                                15h45
+                            </td>
+                            <td>
+                                127199
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A2
+                            </td>
+                            <td>
+                                307
+                            </td>
+                            <td>
+                                C8
+                            </td>
+                            <td>
+                                Cơ sở 3 - Khu C
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                17
+                            </td>
+                            <td>
+                                Vật lý đại cương
+                            </td>
+                            <td>
+                                02/07/2022
+                            </td>
+                            <td>
+                                10h00
+                            </td>
+                            <td>
+                                158693
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                E2
+                            </td>
+                            <td>
+                                302
+                            </td>
+                            <td>
+                                C1
+                            </td>
+                            <td>
+                                Cơ sở 3 - Khu C
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                18
+                            </td>
+                            <td>
+                                Tiếng Anh Công nghệ thông tin cơ bản 3
+                            </td>
+                            <td>
+                                24/11/2022
+                            </td>
+                            <td>
+                                17h30
+                            </td>
+                            <td>
+                                234472
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                C9
+                            </td>
+                            <td>
+                                401
+                            </td>
+                            <td>
+                                A8
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                19
+                            </td>
+                            <td>
+                                Chủ nghĩa xã hội khoa học
+                            </td>
+                            <td>
+                                18/12/2022
+                            </td>
+                            <td>
+                                15h15
+                            </td>
+                            <td>
+                                270148
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                C6
+                            </td>
+                            <td>
+                                711
+                            </td>
+                            <td>
+                                A10
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                20
+                            </td>
+                            <td>
+                                Hệ thống cơ sở dữ liệu
+                            </td>
+                            <td>
+                                26/12/2022
+                            </td>
+                            <td>
+                                14h30
+                            </td>
+                            <td>
+                                275270
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A6
+                            </td>
+                            <td>
+                                801
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                21
+                            </td>
+                            <td>
+                                Xác suất thống kê
+                            </td>
+                            <td>
+                                27/12/2022
+                            </td>
+                            <td>
+                                13h15
+                            </td>
+                            <td>
+                                306263
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                C8
+                            </td>
+                            <td>
+                                812
+                            </td>
+                            <td>
+                                A10
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                22
+                            </td>
+                            <td>
+                                Toán rời rạc
+                            </td>
+                            <td>
+                                03/01/2023
+                            </td>
+                            <td>
+                                17h30
+                            </td>
+                            <td>
+                                276457
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                712
+                            </td>
+                            <td>
+                                A10
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                23
+                            </td>
+                            <td>
+                                Kiến trúc máy tính và hệ điều hành
+                            </td>
+                            <td>
+                                06/01/2023
+                            </td>
+                            <td>
+                                8h45
+                            </td>
+                            <td>
+                                378276
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A2
+                            </td>
+                            <td>
+                                508
+                            </td>
+                            <td>
+                                A9
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                24
+                            </td>
+                            <td>
+                                Lập trình hướng đối tượng
+                            </td>
+                            <td>
+                                08/01/2023
+                            </td>
+                            <td>
+                                15h30
+                            </td>
+                            <td>
+                                377431
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A4
+                            </td>
+                            <td>
+                                702
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                25
+                            </td>
+                            <td>
+                                Lịch sử Đảng Cộng sản Việt Nam
+                            </td>
+                            <td>
+                                02/06/2023
+                            </td>
+                            <td>
+                                17h45
+                            </td>
+                            <td>
+                                505830
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                D3
+                            </td>
+                            <td>
+                                711
+                            </td>
+                            <td>
+                                A10
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                26
+                            </td>
+                            <td>
+                                Phân tích thiết kế phần mềm
+                            </td>
+                            <td>
+                                02/06/2023
+                            </td>
+                            <td>
+                                9h30
+                            </td>
+                            <td>
+                                513527
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                C10
+                            </td>
+                            <td>
+                                804
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                27
+                            </td>
+                            <td>
+                                Nhập môn công nghệ phần mềm
+                            </td>
+                            <td>
+                                21/06/2023
+                            </td>
+                            <td>
+                                8h00
+                            </td>
+                            <td>
+                                541275
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                B5
+                            </td>
+                            <td>
+                                803
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                28
+                            </td>
+                            <td>
+                                Cấu trúc dữ liệu và giải thuật
+                            </td>
+                            <td>
+                                21/06/2023
+                            </td>
+                            <td>
+                                15h15
+                            </td>
+                            <td>
+                                549126
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                C11
+                            </td>
+                            <td>
+                                614
+                            </td>
+                            <td>
+                                A10
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                29
+                            </td>
+                            <td>
+                                An toàn và bảo mật thông tin
+                            </td>
+                            <td>
+                                04/07/2023
+                            </td>
+                            <td>
+                                16h00
+                            </td>
+                            <td>
+                                606139
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                701
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Mạng máy tính
+                            </td>
+                            <td>
+                                07/07/2023
+                            </td>
+                            <td>
+                                14h00
+                            </td>
+                            <td>
+                                620637
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A3
+                            </td>
+                            <td>
+                                702
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Tiếng Anh Công nghệ thông tin cơ bản 4
+                            </td>
+                            <td>
+                                27/08/2023
+                            </td>
+                            <td>
+                                8h00
+                            </td>
+                            <td>
+                                668209
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A2
+                            </td>
+                            <td>
+                                203
+                            </td>
+                            <td>
+                                A9
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                32
+                            </td>
+                            <td>
+                                Pháp luật đại cương
+                            </td>
+                            <td>
+                                08/09/2023
+                            </td>
+                            <td>
+                                10h00
+                            </td>
+                            <td>
+                                689845
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                B10
+                            </td>
+                            <td>
+                                804
+                            </td>
+                            <td>
+                                A10
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                33
+                            </td>
+                            <td>
+                                Tiếng Anh Công nghệ thông tin 1
+                            </td>
+                            <td>
+                                11/12/2023
+                            </td>
+                            <td>
+                                17h45
+                            </td>
+                            <td>
+                                740816
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A9
+                            </td>
+                            <td>
+                                507
+                            </td>
+                            <td>
+                                A9
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                34
+                            </td>
+                            <td>
+                                Trí tuệ nhân tạo
+                            </td>
+                            <td>
+                                19/12/2023
+                            </td>
+                            <td>
+                                16h00
+                            </td>
+                            <td>
+                                750688
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                803
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                35
+                            </td>
+                            <td>
+                                Phát triển dự án công nghệ thông tin
+                            </td>
+                            <td>
+                                22/12/2023
+                            </td>
+                            <td>
+                                14h30
+                            </td>
+                            <td>
+                                757273
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                D11
+                            </td>
+                            <td>
+                                802
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                36
+                            </td>
+                            <td>
+                                Tư tưởng Hồ Chí Minh
+                            </td>
+                            <td>
+                                24/12/2023
+                            </td>
+                            <td>
+                                15h15
+                            </td>
+                            <td>
+                                762542
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                C1
+                            </td>
+                            <td>
+                                707
+                            </td>
+                            <td>
+                                A10
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                37
+                            </td>
+                            <td>
+                                Thực tập cơ sở ngành
+                            </td>
+                            <td>
+                                28/12/2023
+                            </td>
+                            <td>
+                                10h30
+                            </td>
+                            <td>
+                                797133
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A6
+                            </td>
+                            <td>
+                                703
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                38
+                            </td>
+                            <td>
+                                Thiết kế Web
+                            </td>
+                            <td>
+                                28/12/2023
+                            </td>
+                            <td>
+                                9h00
+                            </td>
+                            <td>
+                                797214
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                B4
+                            </td>
+                            <td>
+                                701
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                39
+                            </td>
+                            <td>
+                                Thiết kế đồ hoạ 2D
+                            </td>
+                            <td>
+                                05/01/2024
+                            </td>
+                            <td>
+                                12h30
+                            </td>
+                            <td>
+                                845283
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A7
+                            </td>
+                            <td>
+                                901
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableAltRow">
+                            <td>
+                                40
+                            </td>
+                            <td>
+                                Ứng dụng thuật toán
+                            </td>
+                            <td>
+                                28/02/2024
+                            </td>
+                            <td>
+                                8h30
+                            </td>
+                            <td>
+                                913604
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A2
+                            </td>
+                            <td>
+                                703
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+                        <tr class="kTableRow">
+                            <td>
+                                41
+                            </td>
+                            <td>
+                                Lập trình .NET
+                            </td>
+                            <td>
+                                28/02/2024
+                            </td>
+                            <td>
+                                8h30
+                            </td>
+                            <td>
+                                913739
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                A7
+                            </td>
+                            <td>
+                                801
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+
+
+                        <tr class="kTableRow">
+                            <td>
+                                42
+                            </td>
+                            <td>
+                                Thiết kế web nâng cao
+                            </td>
+                            <td>
+                                12/06/2024
+                            </td>
+                            <td>
+                                8h00
+                            </td>
+                            <td>
+                                5696
+                            </td>
+                            <td style="text-align: center;">
+                                1
+                            </td>
+                            <td>
+                                D8
+                            </td>
+                            <td>
+                                701
+                            </td>
+                            <td>
+                                A1
+                            </td>
+                            <td>
+                                Cơ sở 1 - Khu A
+                            </td>
+                            <td>
+                                0
+                                <sub>(vnđ)</sub>
+                            </td>
+                            <td>
+                                <span style="color:Blue;">
+                                    Tham gia thi</span>
+                            </td>
+                            <td>
+                                <span style="color:Red;"></span>
+                            </td>
+                            <td class="but">
+
+
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

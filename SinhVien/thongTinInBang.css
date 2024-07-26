@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    font-size: 12px;
+}
+
+::placeholder {
+    white-space: pre-line;
+    /* Cho phép xuống dòng */
+}
+
+.blue {
+    color: #0000ff;
+    font-size: 13px;
+}
+
+.red {
+    color: #FF0000;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+* {
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.container {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 1250px;
+}
+
+.contain {
+    position: absolute;
+    left: 205px;
+    width: 1140px;
+    padding-bottom: 40px;
+}
+
+.cont {
+    width: 1100px;
+    margin-left: 15px;
+}
+
+.sider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+}
+
+.sider .inner-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sider .inner-menu ul li a {
+    color: #fff;
+    display: block;
+    padding: 6px 10px;
+    border-bottom: 1px solid #515151;
+}
+
+a {
+    font-size: 14px;
+}
+
+.title {
+    color: #FF0000;
+}
+
+.box-1 {
+    position: relative;
+}
+
+.box-1 .innerItem-1 {
+    position: absolute;
+    left: 10px;
+    border-top: 2px solid #FF0000;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+}
+
+.box-1 .innerItem-2 {
+    position: absolute;
+    left: 540px;
+    height: 150px;
+    border-top: 2px solid #49B165;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+}
+
+.box-1 .innerItem-1 .big {
+    font-size: 26px;
+    font-weight: 550;
+    margin-bottom: 25px;
+    border-bottom: 1px solid;
+}
+
+.w-600 {
+    width: 530px;
+    background-color: #fff;
+}
+
+
+
+.box-1 .innerItem-1 .title {
+    text-align: justify;
+}
+
+.box-1 .innerItem-1 label {
+    font-style: italic;
+    color: #FF0000;
+
+}
+
+.box-1 .innerItem-1 .button .button-right {
+    margin-left: 175px;
+}
+
+.box-2 {
+    position: relative;
+    margin-top: 525px;
+    margin-bottom: 15px;
+    border-top: 2px solid #4285F4;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 1065px;
+    padding: 10px;
+}
+
+.box-2 .title {
+    color: black;
+    font-size: 26px;
+    font-weight: 550;
+}
+
+.box3 {
+    border-top: 2px solid #4285F4;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 1080px;
+}
+
+.box-3 .title {
+    color: black;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.box-4 .title {
+    color: black;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.box-5 .title {
+    color: black;
+
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.blue {
+    color: #4285F4;
+}
+
+.w-1070 {
+    width: 1080px;
+    background-color: #fff;
+}
+
+.w-1050 {
+    width: 1035px;
+}
+
+.f-16 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.f-15 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #b22222;
+    color: white;
+}
+
+.table .x-mark,
+.table .check-mark {
+    text-align: center;
+}
+
+.summary {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #b22222;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.summary .highlight {
+    color: #b22222;
+    font-weight: bold;
+}

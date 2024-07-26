@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="thongTinCaNhan.css">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="sidebar d-flex flex-column flex-shrink-0 text-white"
+      style="width: 210px; height: 100vh; padding: 0; margin-left: -12px; position: fixed; background-color: #ad171c;">
+      <a href="#" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-6">Tài khoản giáo viên</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto list-unstyled">
+        <li class="nav-item">
+          <a href="http://127.0.0.1:5500/GiaoVien/thongTinCaNhan.html" class="nav-link text-white" aria-current="page">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/GiaoVien/thongTinCaNhan.html" />
+            </svg>
+            Thông tin cá nhân
+          </a>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:5500/GiaoVien/danhSachLop.html" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/GiaoVien/danhSachLop.html" />
+            </svg>
+            Danh sách lớp
+          </a>
+        </li>
+        <li class="" style="margin-left: 28px;">
+          <button class="nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            <span style="font-size: 14px;">Thời khóa biểu</span>
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/GiaoVien/lichGiangDay.html"
+                  class="nav-link text-white link-dark rounded "><span>Lịch giảng dạy</span></a></li>
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/GiaoVien/lichCoiThi.html"
+                  class="nav-link text-white link-dark rounded"><span>Lịch
+                    coi thi</span></a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contain">
+      <div class="inner-main" style="z-index: 1;">
+        <div class="information-main">
+          <div class="above">
+            <img
+              style="margin-top: 0px;z-index: 9999; ;border-radius: 50%;vertical-align: middle; width: 130px; height: 130px; object-fit: cover;"
+              src="../resources/chup-chan-dung-6.jpg" alt="ảnh đại diện" width="180px" height="200px">
+            <div class="ms-2 mt-5">
+              <p style="position: relative; top: 18px" class="f-1">TÊN GIẢNG VIÊN</p>
+              <p class="f-0">Tạ Thị Trà Giang </p>
+            </div>
+          </div>
+          <div class="under">
+            <ul>
+              <li>
+              </li>
+              <li style="margin-left: 240px;">
+                <div class="f-1">KHOA QUẢN LÝ : </div>
+                <div class="f-2">Cơ Khí</div>
+              </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="information-related inner-main mt-3">
+        <ul>
+          <li>
+            <span class="tab" data-tab="tab1" id="t1">THÔNG TIN CÁ NHÂN</span>
+          </li>
+          <li>
+            <span class="tab" data-tab="tab2">THÔNG TIN GIA ĐÌNH </span>
+          </li>
+          <li>
+            <span class="tab" data-tab="tab3">THÔNG TIN LIÊN HỆ </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="inner-main information tab-content container mt-3" id="tab1">
+        <div style="margin-left:15px;font-weight: 700; margin-top: 20px;">THÔNG TIN GIA ĐÌNH</div><br><br>
+        <hr style="margin-top: -40px; width: 98%; margin-left: 15px;">
+        <div class="row ms-1">
+          <div class="col-6">
+            <div class="row mb-4">
+              <div class="font-13 bold label col-6">Quốc tịch</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="Việt Nam" disabled>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Tỉnh/TP (Hộ khẩu thường trú)</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="Lào Cai" disabled>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Quận huyện(Hộ khẩu thường trú)</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="Huyện Bảo Yên"
+                  disabled>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Xã phường (Hộ khẩu thường trú)</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="Xã Cam Cọn" disabled>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Dân tộc</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="Kinh" disabled>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Tôn giáo</div>
+              <div class="blue col-6 font-13 bold"></div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Đối tượng ưu tiên</div>
+              <div class="blue col-6 font-13 bold"></div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Đối tượng miễn giảm</div>
+              <div class="blue col-6 font-13 bold"></div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Số CMND/CCCD</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="02544622235668"
+                  disabled></div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Ngày Cấp</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="29/09/2022" disabled>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="label col-6 font-13 bold">Nơi Cấp</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="Lào Cai" disabled>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-6">
+            <div class="row mb-3">
+              <div class="label col-6 font-13 bold">Mặt trước CMND/CCCD</div>
+              <div class="blue col-6"><img src="../resources/cccd11.jpg" alt="ảnh CCCD mặt trước"></div>
+            </div>
+            <div class="row mb-3">
+              <div class="label col-6 font-13 bold">Mặt sau CMND/CCCD</div>
+              <div class="blue col-6"><img src="../resources/cccd12.jpg" alt="ảnh CCCD mặt sau"></div>
+            </div>
+            <div class="row mb-3">
+              <div class="label col-6 font-13 bold">Ảnh chân dung</div>
+              <div class="blue col-6"><img class="anhChanDung" src="../resources/chup-chan-dung-6.jpg"
+                  alt="ảnh chân dung" width="140 px" height="170px">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="label col-6 font-13 bold">Tên ngân hàng(nếu có)</div>
+              <div class="blue col-6"></div>
+            </div>
+            <div class="row mb-3">
+              <div class="label col-6 font-13 bold">Số tài khoản ngân hàng(nếu có)</div>
+              <div class="blue col-6"></div>
+            </div>
+            <div class="row mb-3">
+              <div class="label col-6 font-13 bold">Mã số thẻ bảo hiểm y tế</div>
+              <div class="blue col-6 font-13 bold"><input class="input-active" type="text" value="DK1215956562554"
+                  disabled></div>
+            </div>
+          </div>
+          <div class="allButton mt-3 mb-4">
+            <button class="btnSua btn btn-danger">Chỉnh sửa</button>
+            <button class="btnCapNhat btn btn-danger">Cập nhật</button>
+          </div>
+        </div>
+      </div>
+      <div class="inner-main mt-3">
+        <div class="tab-content tab2" id="tab2">
+          <div style="margin-left:30px;font-weight: 700; margin-top: 20px;">THÔNG TIN GIA ĐÌNH</div><br><br>
+          <hr style="margin-top: -40px; width: 95%; margin-left: 35px;">
+          <div class="flex ">
+            <input type="checkbox">
+            <input class="checkbox" type="checkbox">
+            <div class="title">
+              <div class="bold">Họ tên cha đẻ</div>
+              <div class="left-70 bold">Năm sinh</div>
+              <div class="left-15 bold">Điện thoại</div>
+              <div class="left-65 bold">Nghề nghiệp</div>
+              <div class="left-50 bold">Địa chỉ liên hệ</div>
+            </div>
+          </div>
+          <div class="flex mt-1">
+            <div class="ms-4"><span>Đã mất cha</span></div>
+            <div><span class="ms-3">Không có cha</span></div>
+            <input style="width: 140px" type="text" placeholder="Trần Văn C">
+            <input style="width: 50px" type="text" placeholder="19xx">
+            <input style="width: 110px" type="text" placeholder="0123456789">
+            <input style="width: 110px" type="text" placeholder="nghề">
+            <input style="width: 230px" type="text" placeholder="Xã / Huyện / Tỉnh ">
+          </div>
+          <div class="flex mt-3">
+            <input type="checkbox">
+            <input class="checkbox" type="checkbox">
+            <div class="title">
+              <div class="bold">Họ tên mẹ đẻ</div>
+              <div class="left-71 bold">Năm sinh</div>
+              <div class="left-15 bold">Điện thoại</div>
+              <div class="left-65 bold">Nghề nghiệp</div>
+              <div class="left-50 bold">Địa chỉ liên hệ</div>
+            </div>
+          </div>
+          <div class="flex ms-1 mt-1">
+            <div class="ms-4"><span>Đã mất mẹ</span></div>
+            <div> <span class="left-10">Không có mẹ</span></div>
+            <input type="text" style="width: 140px" placeholder="Nguyễn Thị B">
+            <input type="text" style="width: 50px" placeholder="19xx">
+            <input type="text" style="width: 110px" placeholder="0123456789">
+            <input type="text" style="width: 110px" placeholder="nghề">
+            <input type="text" style="width: 230px" placeholder="Xã / Huyện / Tỉnh ">
+          </div>
+          <div class="mt-2">
+            <div class="txt2">
+              Họ và tên chủ hộ (ghi theo hộ khẩu gia đình)
+            </div>
+            <input type="text" placeholder="Nguyễn Văn B" width="1000px" class="ip1">
+          </div>
+          <div class="txt2 ">
+            <div class="mt-2">Các thành viên ghi trong sổ hộ khẩu</div>
+            <textarea placeholder="Nguyen van A-19XX
+                            Tran Thi C - 19XX">
+                          </textarea>
+          </div>
+          <div class="txt2 mt-2 ">Họ tên vợ hoặc chồng (nếu có)</div>
+          <div class="title-2">
+            <div class="bold">Họ tên vợ hoặc chồng</div>
+            <div class="left-72 bold">Năm sinh</div>
+            <div class="left-49 bold">Điện thoại</div>
+            <div class="left-125 bold">Nghề nghiệp</div>
+            <div class="left-100 bold">Địa chỉ liên hệ</div>
+          </div>
+          <div class="ip2">
+            <input class="input" style="width: 190px" type="text" placeholder="Đinh Thị V">
+            <input class="input" style="width: 80px" type="text" placeholder="xxxx">
+            <input class="input" style="width: 160px" type="text" placeholder="0123456789">
+            <input class="input" style="width: 160px" type="text" placeholder="nghề">
+            <input style="width: 250px" type="text" placeholder="Xã / Huyện / Tỉnh ">
+          </div>
+          <div class="txt2 mt-2">
+            Họ tên con - Năm sinh (nếu có)
+          </div>
+          <div>
+            <textarea class="textarea" placeholder="Nguyen van A-19XX
+                            Nguyễn Văn A - 19XX"></textarea>
+          </div>
+          <div class="txt2 mt-2">Họ tên anh em ruột (nếu có)</div>
+          <div class="title-3">
+            <div class="bold">Họ tên anh/em ruột</div>
+            <div class="all">
+              <div class="left-73 bold">Năm sinh</div>
+              <div class="left-49 bold">Điện thoại</div>
+              <div class="left-125 bold">Nghề nghiệp</div>
+              <div class="left-100 bold">Địa chỉ liên hệ</div>
+            </div>
+          </div>
+          <div class="ip2">
+            <input class="input" type="text" style="width: 190px" placeholder="Nguyễn Văn D">
+            <input class="input" type="text" style="width: 80px" placeholder="xxxx">
+            <input class="input" type="text" style="width: 160px" placeholder="0123456789">
+            <input class="input" type="text" style="width: 160px" placeholder="nghề">
+            <input type="text" style="width: 250px" placeholder="Xã / Huyện / Tỉnh ">
+          </div>
+          <div class="mt-4 left-30 mb-5">
+            <button class="btn btn-danger ">Cập nhật thông tin gia đình</button>
+          </div>
+        </div>
+        <div class="information tab-content tab2 inner-main" id="tab3">
+          <h2>
+            LIÊN HỆ SINH VIÊN
+          </h2>
+          <div>
+            <div>Nơi ở hiện nay</div>
+            <div>số nhà / đường / xã / huyện / tỉnh(thành phố) </div>
+          </div>
+          <div>
+            <div>Số điện thoại sinh viên </div>
+            <div>0123456789</div>
+          </div>
+          <div>
+            <div>Email của sinh viên</div>
+            <div>abc@gmail.com</div>
+          </div>
+          <div>
+            <button class="btn btn-danger">Cập nhật thông tin liên hệ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="main.js">
+
+  </script>
+
+
+</body>
+
+</html>

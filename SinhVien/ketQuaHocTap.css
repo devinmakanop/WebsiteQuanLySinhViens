@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.f-15 {
+  font-size: 15px;
+}
+
+.w-1070 {
+  width: 1070px;
+}
+
+::placeholder {
+  white-space: pre-line;
+  /* Cho phép xuống dòng */
+}
+
+a {
+  font-size: 14px;
+}
+
+.bgr {
+  color: blue;
+}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 1250px;
+}
+
+.contain {
+  position: absolute;
+  left: 205px;
+  background-color: #e8bebf;
+  width: 1138px;
+}
+
+.cont {
+  background-color: #fff;
+  width: 1100px;
+  margin-left: 18px;
+  border-top: 2px #b22222 solid;
+  border-radius: 5px;
+}
+
+.sider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+}
+
+.sider .inner-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sider .inner-menu ul li a {
+  color: #fff;
+  display: block;
+  padding: 6px 10px;
+  border-bottom: 1px solid #515151;
+}
+
+th,
+td {
+  font-size: 13px;
+}
+.box{
+  margin: 40px 0;
+}

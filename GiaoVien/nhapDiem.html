@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="nhapDiem.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Document</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .info div {
+    margin-bottom: 5px;
+  }
+
+  .left-info,
+  .right-info {
+    width: 48%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .highlight {
+    color: red;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="sidebar d-flex flex-column flex-shrink-0 text-white"
+      style="width: 210px; height: 100vh; padding: 0; margin-left: -12px; position: fixed; background-color: #ad171c;">
+      <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-6">Tài khoản giáo viên</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto list-unstyled">
+        <li class="nav-item">
+          <a href="http://127.0.0.1:5500/GiaoVien/thongTinCaNhan.html" class="nav-link text-white" aria-current="page">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/GiaoVien/thongTinCaNhan.html" />
+            </svg>
+            Thông tin cá nhân
+          </a>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:5500/GiaoVien/danhSachLop.html" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/GiaoVien/danhSachLop.html" />
+            </svg>
+            Danh sách lớp
+          </a>
+        </li>
+        <li class="" style="margin-left: 28px;">
+          <button class="nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            <span style="font-size: 14px;">Thời khóa biểu</span>
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/GiaoVien/lichGiangDay.html"
+                  class="nav-link text-white link-dark rounded "><span>Lịch giảng dạy</span></a></li>
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/GiaoVien/lichCoiThi.html"
+                  class="nav-link text-white link-dark rounded"><span>Lịch
+                    coi thi</span></a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-10 contain pb-4">
+      <div class="cont mt-4 pb-4 ps-3">
+
+        <div class="title f-15 pt-3">Kết quả học tập - Bảng điểm thành phần</div>
+        <hr class="mb-4" style="margin-top: 10px; width: 1070px;">
+        <div class="info">
+          <div class="left-info">
+            <div><strong>Giáo viên giảng dạy:</strong> Tạ Thị Trà Giang</div>
+            <div><strong>Học phần:</strong> Quản lý chất lượng sản phẩm</div>
+            <div><strong>Hình thức học:</strong> Bài tập lớn</div>
+            <div><strong>Mã lớp học phần:</strong> 20232ME0600003</div>
+          </div>
+          <div class="right-info">
+            <div><strong>Trạng thái:</strong> <span class="highlight">Đã phân công giảng dạy</span></div>
+            <div><strong>Trình độ:</strong> 2.0 (0.50 + 0.00 + 0.50)</div>
+            <div><strong>Lớp ưu tiên:</strong> ME060.2</div>
+          </div>
+        </div>
+
+        <table class="table table-bordered table-striped ">
+          <thead>
+            <tr>
+              <th rowspan="2">STT</th>
+              <th rowspan="2">Mã SV</th>
+              <th rowspan="2">Họ đệm</th>
+              <th rowspan="2">Tên</th>
+              <th rowspan="2">Lớp danh nghĩa</th>
+              <th colspan="10">Điểm thường xuyên</th>
+              <th rowspan="2">Điểm giữa kỳ</th>
+              <th rowspan="2">TB KTTX</th>
+              <th rowspan="2">Số tiết nghỉ</th>
+              <th rowspan="2">Điểm chuyên cần</th>
+              <th rowspan="2">Điều kiện dự thi</th>
+              <th rowspan="2">Ghi chú</th>
+            </tr>
+            <tr>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>10</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2021602141</td>
+              <td>Đặng Xuân</td>
+              <td>An</td>
+              <td>2021DHCDT02</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2021601660</td>
+              <td>Nguyễn Việt</td>
+              <td>Anh</td>
+              <td>2021DHCDT04</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>2021605122</td>
+              <td>Nguyễn Vũ Phương</td>
+              <td>Anh</td>
+              <td>2021DHCDT04</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>2021603595</td>
+              <td>Lê Công</td>
+              <td>Bắc</td>
+              <td>2021DHCDT03</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>2021607312</td>
+              <td>Nguyễn Công Bảo</td>
+              <td>Châu</td>
+              <td>2021DHCDT02</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>2021607718</td>
+              <td>Nguyễn Minh</td>
+              <td>Châu</td>
+              <td>2021DHCDT03</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>2021601665</td>
+              <td>Bùi Đức</td>
+              <td>Chiến</td>
+              <td>2021DHCDT04</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>2021602744</td>
+              <td>Tống Minh</td>
+              <td>Chiến</td>
+              <td>2021DHCDT04</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>2021607560</td>
+              <td>Trần Văn</td>
+              <td>Chương</td>
+              <td>2021DHCDT03</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>2021602266</td>
+              <td>Hồ Quốc</td>
+              <td>Cường</td>
+              <td>2021DHCDT03</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>2021602607</td>
+              <td>Trần Đoàn</td>
+              <td>Công</td>
+              <td>2021DHCDT03</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>2021601398</td>
+              <td>Nguyễn Tấn</td>
+              <td>Đăng</td>
+              <td>2021DHCDT04</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

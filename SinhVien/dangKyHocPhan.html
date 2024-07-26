@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="dangKyHocPhan.css">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container all">
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column flex-shrink-0 text-white "
+      style="width: 210px; height: 100vh; padding: 0; margin-left: -12px; position: fixed; background-color: #ad171c;">
+      <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-6">Tài khoản sinh viên</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto list-unstyled">
+        <li class="nav-item">
+          <a href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" class="nav-link text-white" aria-current="page">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinCaNhan.html" />
+            </svg>
+            Thông tin cá nhân
+          </a>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/SinhVien/dangKyHocPhan.html" />
+            </svg>
+            Đăng ký học phần
+          </a>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/SinhVien/thoiKhoaBieu.html" />
+            </svg>
+            Thời khóa biểu
+          </a>
+        </li>
+        <li class="" style="margin-left: 28px;">
+          <button class="nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            <span style="font-size: 14px;">Theo dõi lịch thi</span>
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/keHoachThi.html"
+                  class="nav-link text-white link-dark rounded "><span>Kế hoạch
+                    thi</span></a></li>
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                  class="nav-link text-white link-dark rounded"><span class="bgr">Lịch
+                    thi</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="" style="margin-left: 28px;">
+          <button class=" nav-link text-white btn btn-toggle align-items-center rounded collapsed dropdown-toggle"
+            data-bs-toggle="collapse" data-bs-target="#kq-collapse" aria-expanded="false">
+            <span style="font-size: 14px;">Theo dõi kết quả học</span>
+          </button>
+          <div class="collapse" id="kq-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/ketQuaHocTap.html"
+                  class="nav-link text-white link-dark rounded "><span>Kết quả học
+                    tập</span></a></li>
+              <li style="margin-left: 20px;"><a href="http://127.0.0.1:5500/SinhVien/lichThi.html"
+                  class="nav-link text-white link-dark rounded">Kết quả thi</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="http://127.0.0.1:5500/SinhVien/thongTinInBang.html" />
+            </svg>
+            Thông tin in bằng
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contain">
+      <div class="cont mt-4 pb-3 ps-3 ">
+        <div class="header">Đăng ký học phần</div>
+        <div class="info-block w-1070">
+          <div>
+            <table>
+              <tr>
+                <th>Họ và tên sinh viên:</th>
+                <td>Lê Tuấn Đạt</td>
+              </tr>
+              <tr>
+                <th>Mã sinh viên:</th>
+                <td>2021606999</td>
+              </tr>
+              <tr>
+                <th>Lớp:</th>
+                <td>2021ĐHCNTT05</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table>
+              <tr>
+                <th>Tổng tín chỉ tích lũy:</th>
+                <td>80.0</td>
+              </tr>
+              <tr>
+                <th>Điểm trung bình chung tích lũy:</th>
+                <td>2.50</td>
+              </tr>
+              <tr>
+                <th>Xếp hạng:</th>
+                <td>Khá</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table>
+              <tr>
+                <th>Số tiền trong tài khoản:</th>
+                <td>0</td>
+              </tr>
+              <tr>
+                <th>Số tiền còn nợ:</th>
+                <td>0</td>
+              </tr>
+              <tr>
+                <th>Trạng thái:</th>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="warning w-1070 mb-4">
+          Vui lòng không tải lại trang, sử dụng nhiều trình duyệt và cửa sổ trong quá trình đăng ký.<br>
+          Hệ thống sẽ tự động cập nhật học phần được phép đăng ký, kết quả đơn đăng ký và thời khóa biểu<br>
+          Số thứ tự đăng ký chỉ mang tính chất tham khảo
+        </div>
+
+        <div class="timetable w-1070">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Thời khóa biểu</th>
+                <th>Thứ 2</th>
+                <th>Thứ 3</th>
+                <th>Thứ 4</th>
+                <th>Thứ 5</th>
+                <th>Thứ 6</th>
+                <th>Thứ 7</th>
+                <th>Chủ nhật</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sáng</td>
+                <td></td>
+                <td>
+                  <div class="course">
+                    20232IT6056007<br>
+                    Quản trị mạng trên hệ điều hành Windows<br>
+                    (4, 5)<br>
+                    609 (Cơ sở 1 - Khu A)
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  <div class="course">
+                    20232IT6029001<br>
+                    Phát triển ứng dụng trên thiết bị di động<br>
+                    (1, 2, 3)<br>
+                    601 (Cơ sở 1 - Khu A)
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Chiều</td>
+                <td></td>
+                <td>
+                  <div class="course">
+                    20232IT6125001<br>
+                    Thiết kế web nâng cao<br>
+                    (9, 10, 11)<br>
+                    609 (Cơ sở 1 - Khu A)
+                  </div>
+                  <div class="course">
+                    20232IT6123001<br>
+                    Tương tác người máy<br>
+                    (9, 10, 11)<br>
+                    304 (Cơ sở 1 - Khu A)
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  <div class="course">
+                    20232LP6003061<br>
+                    Pháp luật đại cương<br>
+                    (7, 8, 9)<br>
+                    601 (Cơ sở 1 - Khu A)
+                  </div>
+                </td>
+                <td>
+                  <div class="course">
+                    20232IT6004001<br>
+                    Công nghệ đa phương tiện<br>
+                    (13, 14, 15)<br>
+                    305 (Cơ sở 1 - Khu A)
+                  </div>
+                  <div class="course">
+                    20232IT6034001<br>
+                    Tích hợp hệ thống phần mềm<br>
+                    (13, 14, 15)<br>
+                    206 (Cơ sở 1 - Khu A)
+                  </div>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Tối</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>

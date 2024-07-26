@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.f-15 {
+  font-size: 15px;
+}
+
+.w-1070 {
+  width: 1070px;
+}
+
+::placeholder {
+  white-space: pre-line;
+  /* Cho phép xuống dòng */
+}
+
+a {
+  font-size: 14px;
+}
+
+.bgr {
+  color: red;
+}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 1250px;
+}
+
+.contain {
+  position: absolute;
+  left: 205px;
+  background-color: #e8bebf;
+  width: 1138px;
+}
+
+.cont {
+  background-color: #fff;
+  width: 1100px;
+  margin-left: 18px;
+  border-top: 2px red solid;
+  border-radius: 5px;
+}
+
+.sider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+}
+
+.sider .inner-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sider .inner-menu ul li a {
+  color: #fff;
+  display: block;
+  padding: 6px 10px;
+  border-bottom: 1px solid #515151;
+}
+
+th,
+td {
+  font-size: 13px;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.table th, .table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+.table th {
+  background-color: #b22222;
+  color: white;
+}
+.table .x-mark, .table .check-mark {
+  text-align: center;
+}
+.summary {
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #b22222;
+  display: flex;
+  justify-content: space-between;
+}
+.summary p {
+  margin: 0;
+  padding: 5px 0;
+}
+.summary .highlight {
+  color: #b22222;
+  font-weight: bold;
+}
